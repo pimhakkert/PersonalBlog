@@ -30,4 +30,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'seeder_user' => [
+        'password' => env('SEEDER_USER_PASSWORD')
+    ]
+
 ];

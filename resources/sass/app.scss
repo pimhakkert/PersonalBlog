@@ -1,0 +1,33 @@
+#admin_index {
+    section {
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            display: flex;
+            justify-items: center;
+
+            button {
+                max-height: 32px;
+                align-self: center;
+            }
+        }
+    }
+
+    table {
+        tr {
+            td:last-of-type {
+                text-align: center;
+            }
+        }
+    }
+}
+
+#admin_new, #admin_edit {
+    textarea {
+        display: none;
+    }
+}
+
+//Normal style sheet
+@import "~@exampledev/new.css/new.css";

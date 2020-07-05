@@ -20,6 +20,7 @@ class CreatePostsTable extends Migration
             $table->boolean('is_published');
             $table->integer('read_minutes');
             $table->integer('slug_duplicate_count');
+            $table->text('description');
             $table->text('content')->nullable();
             $table->timestamps();
         });

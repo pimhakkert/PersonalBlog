@@ -26,7 +26,7 @@
                 <td>{{ $post->created_at->format('j F, Y') }}</td>
                 <td>@if($post->is_published == 1) true @else false @endif</td>
                 <td>
-                    <a href=""><button>Edit</button></a>
+                    <a href="{{ route('admin.edit', ['slug'=> $post->slug]) }}"><button>Edit</button></a>
                 </td>
             </tr>
         @endforeach

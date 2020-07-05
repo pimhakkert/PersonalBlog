@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PostController@index')->name('home');
 
-Route::get('/post/{slug}', 'PostController@view')->name('post_view');
+Route::get('/post/{slug}', 'PostController@view')->name('post.view');
 
 //Admin
 Route::get('/admin', 'AdminController@index')->name('admin.home')->middleware('auth');
@@ -24,8 +24,8 @@ Route::get('/admin', 'AdminController@index')->name('admin.home')->middleware('a
 Route::get('/admin/new', 'AdminController@new')->name('admin.new')->middleware('auth');
 Route::post('/admin/new', 'AdminController@storeNew')->name('admin.new')->middleware('auth');
 
-//Route::get('/admin/edit/{slug}', 'AdminController@new')->name('admin.new')->middleware('auth');
-//Route::post('/admin/edit/{slug}', 'AdminController@storeNew')->name('admin.new')->middleware('auth');
+Route::get('/admin/edit/{slug}', 'AdminController@edit')->name('admin.edit')->middleware('auth');
+Route::post('/admin/edit/{slug}', 'AdminController@storeEdit')->name('admin.edit')->middleware('auth');
 
 Route::get('/admin/logout', 'AdminController@logout')->name('admin.logout')->middleware('auth');
 

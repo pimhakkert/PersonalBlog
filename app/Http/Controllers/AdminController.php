@@ -60,8 +60,39 @@ class AdminController extends BaseController
         $post->title = $request->title;
         $post->slug = $postSlug;
         $post->read_minutes = $request->minutes;
+        $post->description = $request->description;
         $post->content = $request->postcontent;
         $post->slug_duplicate_count = 0;
+
+        $isPublished = $request->ispublish;
+        if($isPublished === 'on')
+        {
+            $post->is_published = true;
+        }
+        else
+        {
+            $post->is_published = false;
+        }
+
+        $post->save();
+
+        return redirect()->route('admin.home');
+    }
+
+    function edit($slug)
+    {
+        $post = Post::where('slug', '=', $slug)->firstOrFail();
+        return view('admin.edit',['post'=>$post]);
+    }
+
+    function storeEdit($slug, Request $request)
+    {
+        $post = Post::where('slug', '=', $slug)->firstOrFail();
+
+        $post->title = $request->title;
+        $post->read_minutes = $request->minutes;
+        $post->description = $request->description;
+        $post->content = $request->postcontent;
 
         $isPublished = $request->ispublish;
         if($isPublished === 'on')

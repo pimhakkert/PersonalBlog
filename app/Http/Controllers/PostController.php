@@ -9,15 +9,13 @@ class PostController extends Controller
 {
     public function index()
     {
-        return view('front.index');
+        $posts = Post::where('is_published', '=', '1')->orderBy('created_at','desc')->get();
+        return view('front.index', ['posts' => $posts]);
     }
 
     public function view($slug)
     {
-        $temp = new Post();
-        $temp->title = 'Test slug';
-        $temp->slug = 'test-slug';
-        $temp->content = 'asdasdadadadaersgfz';
-        return view('front.post', ['post' => $temp]);
+        $post = Post::where('slug', '=', $slug)->firstOrFail();
+        return view('front.post', ['post' => $post]);
     }
 }

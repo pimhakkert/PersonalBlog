@@ -454,8 +454,8 @@ img {
   text-align: center;
 }
 
-#admin_new textarea,
-#admin_edit textarea {
+#admin_new #postcontent,
+#admin_edit #postcontent {
   display: none;
 }
 

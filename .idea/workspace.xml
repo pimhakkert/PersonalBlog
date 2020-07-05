@@ -20,6 +20,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
@@ -124,6 +127,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1eB5SWQLw5dDNeAI59H5xZzbbsX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -165,7 +169,7 @@
       <workItem from="1593849056969" duration="7355000" />
       <workItem from="1593936046239" duration="1386000" />
       <workItem from="1593939415706" duration="1472000" />
-      <workItem from="1593953179712" duration="3091000" />
+      <workItem from="1593953179712" duration="4453000" />
     </task>
     <servers />
   </component>

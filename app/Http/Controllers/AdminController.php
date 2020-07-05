@@ -37,12 +37,31 @@ class AdminController extends BaseController
 
     function storeNew(Request $request)
     {
+        $preSlug = $request->title;
+        $postSlug = Str::slug($preSlug, '-');
+
+        //Check if slug already exists and make new slug name if so
+        $testPost = Post::where('slug', '=', $postSlug)->first();
+        if($testPost !== null)
+        {
+            //There is a duplicate slug in the system
+
+            //Tell original post there has been a duplicate slug, so next time an even greater number gets added to the new slug
+            $testPost->slug_duplicate_count = $testPost->slug_duplicate_count + 1;
+
+            //Make new slug
+            $postSlug .= '-'.$testPost->slug_duplicate_count;
+
+            $testPost->save();
+        }
+
         $post = new Post();
 
         $post->title = $request->title;
-        $post->slug = Str::slug($request->title, '-');
+        $post->slug = $postSlug;
         $post->read_minutes = $request->minutes;
         $post->content = $request->postcontent;
+        $post->slug_duplicate_count = 0;
 
         $isPublished = $request->ispublish;
         if($isPublished === 'on')

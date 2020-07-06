@@ -15,13 +15,15 @@ class PostController extends Controller
         if(Auth::check())
         {
             $posts = Post::all();
+            $isAuthenticated = true;
         }
         else
         {
             $posts = Post::where('is_published', '=', '1')->orderBy('created_at','desc')->get();
+            $isAuthenticated = false;
         }
 
-        return view('front.index', ['posts' => $posts]);
+        return view('front.index', ['posts' => $posts, 'isAuthenticated' => $isAuthenticated]);
     }
 
     public function view($slug)

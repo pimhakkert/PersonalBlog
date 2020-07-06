@@ -3,8 +3,8 @@
     <nav>
         <a href="{{ route('home') }}">Home</a>
         |
-        <a href="https://pimhakkert.com">pimhakkert.com</a>
-        |
         <a href="{{ route('admin.logout') }}">Logout</a>
+        |
+        <a href="https://pimhakkert.com">pimhakkert.com</a>
     </nav>
 </header>

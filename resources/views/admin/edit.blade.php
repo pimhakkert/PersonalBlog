@@ -14,7 +14,7 @@
         <p>
             <label for="minutes">Reading time in minutes</label>
             <br/>
-            <input type="number" name="minutes" id="minutes" value="1" min="0" required value="{{ $post->read_minutes }}">
+            <input type="number" name="minutes" id="minutes" min="0" required value="{{ $post->read_minutes }}">
         </p>
         <p>
             <label for="description">Description (300 characters max)</label>

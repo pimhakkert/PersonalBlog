@@ -435,7 +435,14 @@ input {
 
 img {
 	max-width: 100%;
-}#admin_index section {
+}#front_index span,
+#front_post span {
+  color: #959595;
+  font-weight: normal;
+  font-size: 1.3rem;
+}
+
+#admin_index section {
   display: flex;
   justify-content: space-between;
 }

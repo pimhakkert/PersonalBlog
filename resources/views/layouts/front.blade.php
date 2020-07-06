@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
-<body>
+<body id="@yield('body_id')">
 @include('partials.header-front')
 @yield('content')
 @include('partials.footer-front')

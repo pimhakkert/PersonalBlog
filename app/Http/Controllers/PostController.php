@@ -32,12 +32,14 @@ class PostController extends Controller
         if(Auth::check())
         {
             $post = Post::where('slug', '=', $slug)->firstOrFail();
+            $isAuthenticated = true;
         }
         else
         {
             $post = Post::where('slug', '=', $slug)->where('is_published', '=', '1')->firstOrFail();
+            $isAuthenticated = false;
         }
 
-        return view('front.post', ['post' => $post]);
+        return view('front.post', ['post' => $post, 'isAuthenticated' => $isAuthenticated]);
     }
 }
